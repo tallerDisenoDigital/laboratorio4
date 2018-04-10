@@ -22,5 +22,5 @@ module sumador_flotante #(parameter E = 8, parameter M = 23)
 	
 	normalizador #(E,M) normalizador_dut(suma_mant,exp_mayor, mant_cout, s[M-1:0], s[E+M:M],exp_cout);
 	
-	
+	assign s[M+E] = a[M+E];
 endmodule
