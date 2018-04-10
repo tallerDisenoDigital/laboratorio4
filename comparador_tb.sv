@@ -1,10 +1,9 @@
 module comparador_tb ();
 
 
-	logic[3:0] a,b;
-	logic s;
+	logic[3:0] a,b,mayor,menor;
 
-	comparador #(4) comp(a,b,s);
+	comparador_exponentes #(4) comp(a,b,mayor,menor);
 
 	
 	initial begin
