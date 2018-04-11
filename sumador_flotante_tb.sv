@@ -39,7 +39,9 @@ module sumador_flotante_tb ();
 	
 	b = 32'b11000010001100100001011110001101;
 	
-	assert (s===32'b) $info("=)"); else $error("15 + 0 = 15. Failed");
+	
+	assert (s===32'b11000010110001100010010001011010) $info("7.875 + 0.1875 = 8.0625, success"); else $error("7.875 + 0.1875 = 8.0625. Failed");
+	
 	
 	#10
 	
@@ -47,7 +49,6 @@ module sumador_flotante_tb ();
 	
 	b = 32'b01000001010001111010111000010100;
 	
-	assert (s===4'b1010) $info("=)"); else $error("15 + 0 = 15. Failed");
 	
 	#10
 	
@@ -55,7 +56,6 @@ module sumador_flotante_tb ();
 	
 	b = 32'b01000001000011100110011001100110;
 	
-	assert (s===4'b1010) $info("=)"); else $error("15 + 0 = 15. Failed");
 	
 	#10
 	
@@ -63,7 +63,6 @@ module sumador_flotante_tb ();
 	
 	a = 32'b00000000000000000000000000000000;
 	
-	assert (s===4'b1010) $info("=)"); else $error("15 + 0 = 15. Failed");
 	
 	#10
 	
@@ -71,8 +70,7 @@ module sumador_flotante_tb ();
 	
 	a = 32'b11000001000010001010001111010111;
 
-	assert (s===4'b1010) $info("=)"); else $error("15 + 0 = 15. Failed");
-
+	
 	
 	
 	#10;

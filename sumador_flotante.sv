@@ -7,7 +7,7 @@ module sumador_flotante #(parameter E = 8, parameter M = 23)
 	logic[M-1:0] mant_mayor,mant_menor;
 	logic[M:0] suma_mant;
 	logic exp_cout1,mant_cout;
-	comparador_exponentes #(E) comp_exp_dut(a[E+M:M],b[E+M:M],exp_mayor,exp_menor); 
+	comparador_exponentes #(E) comp_exp_dut(a[E+M-1:M],b[E+M-1:M],exp_mayor,exp_menor); 
 	comparador_mantisas #(M) comp_mant_dut(a[M-1:0],b[M-1:0],mant_menor,mant_mayor);
 	
 	parameterizable_not #(E) not_exp_dut(exp_menor,not_exp_menor);
@@ -20,7 +20,7 @@ module sumador_flotante #(parameter E = 8, parameter M = 23)
 	
 	suma_mantisas #(M) suma_mant_dut(mant_menor,mant_mayor,res_exp, suma_mant,mant_cout);
 	
-	normalizador #(E,M) normalizador_dut(suma_mant,exp_mayor, mant_cout, s[M-1:0], s[E+M:M],exp_cout);
+	normalizador #(E,M) normalizador_dut(suma_mant,exp_mayor, mant_cout, s[M-1:0], s[E+M-1:M],exp_cout);
 	
 	assign s[M+E] = a[M+E];
 endmodule
